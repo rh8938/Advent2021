@@ -51,7 +51,6 @@ namespace Advent2021
         {
             //https://adventofcode.com/2021/day/2
             Console.WriteLine("Day2P1");
-            string[] splitStr;
             var navSteps = File.ReadAllLines("input02.txt").ToList().Select(x =>
             new DirectionalInput() { direction = x.Split(' ')[0], magnitude = int.Parse(x.Split(' ')[1]) });
 
