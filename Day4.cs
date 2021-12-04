@@ -41,6 +41,55 @@ namespace Advent2021
             Console.Read();
         }
 
+        public static void Part2()
+        {
+            Console.WriteLine("Day4P2");
+            var bingoInput = File.ReadAllLines("input04.txt").ToList();
+            var numbers = bingoInput[0].Split(',').Select(x => int.Parse(x)).ToList();
+            var bingoCards = new List<BingoGrid>();
+            for (int i = 2; i < bingoInput.Count; i = i + 6)
+            {
+                var grid = new BingoGrid();
+                grid.grid = new List<int[]>();
+                grid.grid.Add(bingoInput[i].Trim().Replace("  ", " ").Split(' ').Select(x => int.Parse(x)).ToArray());
+                grid.grid.Add(bingoInput[i + 1].Trim().Replace("  ", " ").Split(' ').Select(x => int.Parse(x)).ToArray());
+                grid.grid.Add(bingoInput[i + 2].Trim().Replace("  ", " ").Split(' ').Select(x => int.Parse(x)).ToArray());
+                grid.grid.Add(bingoInput[i + 3].Trim().Replace("  ", " ").Split(' ').Select(x => int.Parse(x)).ToArray());
+                grid.grid.Add(bingoInput[i + 4].Trim().Replace("  ", " ").Split(' ').Select(x => int.Parse(x)).ToArray());
+                bingoCards.Add(grid);
+            }
+            for (int i = 4; i < numbers.Count(); i++) //start at number 5, no winner before then
+            {
+                List<int> matches = new List<int>(); 
+                for (int j = 0; j < bingoCards.Count; j++)
+                {
+                    BingoGrid bingoCard = bingoCards[j];
+                    var result = CheckWinner(bingoCard.grid, numbers.GetRange(0, i));
+                    if (result.winner)
+                    {
+                        if (bingoCards.Count() > 1)
+                        {
+                            matches.Add(j);
+                        }
+                        else
+                        {
+                            Console.WriteLine(result.score);
+                            break;
+                        }
+                    }
+                }
+                Console.WriteLine("number " + numbers[i]);
+                Console.WriteLine("elims " + matches.Count);
+                matches.Reverse();
+                for (int m = 0; m < matches.Count; m++)
+                {
+                    bingoCards.RemoveAt(matches[m]);
+                }
+                Console.WriteLine($"Remaining: {bingoCards.Count}");
+            }
+            Console.Read();
+        }
+
         public static Result CheckWinner(List<int[]> candidate, List<int> sequence)
         {
             for (int i = 0; i < candidate.Count(); i++)
