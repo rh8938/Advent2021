@@ -58,6 +58,7 @@ namespace Advent2021
                     carbonList = carbonList.Where(p => p[i] == carbonValue).ToList();
                 }
             }
+
             string oxygenString = string.Join("", oxygenList[0]);
             string carbonString = string.Join("", carbonList[0]);
             long oxygen = Convert.ToInt32(oxygenString, 2);

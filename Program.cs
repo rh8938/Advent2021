@@ -8,6 +8,7 @@ namespace Advent2021
     {
         static void Main(string[] args)
         {
+            Day4.Part1();
             Day3.Part2();
         }
     }

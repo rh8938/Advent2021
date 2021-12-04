@@ -16,16 +16,11 @@ C:\Users\ryanh\source\repos\Advent2021\Advent2021\obj\Debug\net5.0\Advent2021.pd
 C:\Users\ryanh\source\repos\Advent2021\Advent2021\obj\Debug\net5.0\Advent2021.genruntimeconfig.cache
 C:\Users\ryanh\source\repos\Advent2021\Advent2021\bin\Debug\net5.0\input01.txt
 C:\Users\ryanh\source\repos\Advent2021\Advent2021\bin\Debug\net5.0\input02.txt
-C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.csproj.AssemblyReference.cache
-C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.AssemblyInfoInputs.cache
-C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.AssemblyInfo.cs
-C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.csproj.CoreCompileInputs.cache
-C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.dll
-C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\ref\Advent2021.dll
-C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.pdb
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\input01.txt
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\input02.txt
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\input03.txt
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\input04 - Copy.txt
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\input04.txt
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\Advent2021.exe
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\Advent2021.deps.json
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\Advent2021.runtimeconfig.json
@@ -33,6 +28,11 @@ C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\Advent2021.
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\Advent2021.dll
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\ref\Advent2021.dll
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\Advent2021.pdb
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.AssemblyInfoInputs.cache
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.AssemblyInfo.cs
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.csproj.CoreCompileInputs.cache
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.dll
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\ref\Advent2021.dll
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.pdb
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.genruntimeconfig.cache
-C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\input03.txt
-C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\actualinput03.txt
