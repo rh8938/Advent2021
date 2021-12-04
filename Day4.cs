@@ -56,11 +56,12 @@ namespace Advent2021
                 grid.grid.Add(bingoInput[i + 2].Trim().Replace("  ", " ").Split(' ').Select(x => int.Parse(x)).ToArray());
                 grid.grid.Add(bingoInput[i + 3].Trim().Replace("  ", " ").Split(' ').Select(x => int.Parse(x)).ToArray());
                 grid.grid.Add(bingoInput[i + 4].Trim().Replace("  ", " ").Split(' ').Select(x => int.Parse(x)).ToArray());
+                grid.id = Guid.NewGuid();
                 bingoCards.Add(grid);
             }
             for (int i = 4; i < numbers.Count(); i++) //start at number 5, no winner before then
             {
-                List<int> matches = new List<int>(); 
+                List<Guid> matches = new List<Guid>(); 
                 for (int j = 0; j < bingoCards.Count; j++)
                 {
                     BingoGrid bingoCard = bingoCards[j];
@@ -69,7 +70,7 @@ namespace Advent2021
                     {
                         if (bingoCards.Count() > 1)
                         {
-                            matches.Add(j);
+                            matches.Add(bingoCard.id);
                         }
                         else
                         {
@@ -80,10 +81,9 @@ namespace Advent2021
                 }
                 Console.WriteLine("number " + numbers[i]);
                 Console.WriteLine("elims " + matches.Count);
-                matches.Reverse();
-                for (int m = 0; m < matches.Count; m++)
+                foreach (Guid guid in matches)
                 {
-                    bingoCards.RemoveAt(matches[m]);
+                    bingoCards.RemoveAll(x => matches.Contains(x.id));
                 }
                 Console.WriteLine($"Remaining: {bingoCards.Count}");
             }
@@ -135,6 +135,7 @@ namespace Advent2021
 
         public struct BingoGrid
         {
+            public Guid id;
             public new List<int[]> grid;
         }
 
