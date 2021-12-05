@@ -12,7 +12,6 @@ namespace Advent2021
     {
         public Vector2 start;
         public Vector2 end;
-        public bool cardinal;
         public List<Vector2> path;
     }
 
@@ -29,7 +28,7 @@ namespace Advent2021
                 Vector2 startVec = new Vector2(startSplit[0], startSplit[1]);
                 Vector2 endVec = new Vector2(endSplit[0], endSplit[1]);
                 List<Vector2> path = getPath1(startVec, endVec);
-                return new VentLine() { start = startVec, end = endVec, cardinal = isCardinal(startVec, endVec), path = path };
+                return new VentLine() { start = startVec, end = endVec, path = path };
             }).ToList();
             var a = ventLines[1];
 
@@ -49,7 +48,7 @@ namespace Advent2021
                 Vector2 startVec = new Vector2(startSplit[0], startSplit[1]);
                 Vector2 endVec = new Vector2(endSplit[0], endSplit[1]);
                 List<Vector2> path = getPath2(startVec, endVec);
-                return new VentLine() { start = startVec, end = endVec, cardinal = isCardinal(startVec, endVec), path = path };
+                return new VentLine() { start = startVec, end = endVec, path = path };
             }).ToList();
             var a = ventLines[1];
 
@@ -104,24 +103,24 @@ namespace Advent2021
         }
 
         public static List<Vector2> getPath2(Vector2 s, Vector2 e)
-        {        
+        {
             var res = new List<Vector2>();
             res.Add(s);
 
             var combined = s - e;
 
-                float Ydir = combined.Y / Math.Abs(combined.Y);
-                float Xdir = combined.X / Math.Abs(combined.X);
+            float Ydir = combined.Y / Math.Abs(combined.Y);
+            float Xdir = combined.X / Math.Abs(combined.X);
 
             Ydir = (Ydir != Ydir) ? 0 : Ydir;
             Xdir = (Xdir != Xdir) ? 0 : Xdir;
 
             for (int i = 0; i < Math.Max(Math.Abs(combined.Y), Math.Abs(combined.X)); i++)
-                {
-                    s.Y -= Ydir;
-                    s.X -= Xdir;
-                    res.Add(s);
-                }
+            {
+                s.Y -= Ydir;
+                s.X -= Xdir;
+                res.Add(s);
+            }
             return res;
         }
     }
