@@ -37,3 +37,5 @@ C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\ref\Advent2
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.pdb
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.genruntimeconfig.cache
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\input05.txt
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\input05 - Copy.txt
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.csproj.AssemblyReference.cache

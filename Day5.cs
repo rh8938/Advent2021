@@ -34,9 +34,8 @@ namespace Advent2021
             var a = ventLines[1];
 
             var pathpoints = ventLines.SelectMany(x => x.path).ToList();
-            var distinct = pathpoints.Distinct();
-            var count = pathpoints.Count() - distinct.Count();
-            Console.Read();
+            var count = pathpoints.GroupBy(p => p).Where(q => q.Count() != 1).Select(q => q.Key).Distinct().ToList();
+            Console.WriteLine(count);
         }
 
         public static bool isCardinal(Vector2 s, Vector2 e)
@@ -69,7 +68,6 @@ namespace Advent2021
                     s.Y -= dir;
                     res.Add(s);
                 }
-
             }
             if (combined.Y == 0)
             {
@@ -79,7 +77,6 @@ namespace Advent2021
                     s.X -= dir;
                     res.Add(s);
                 }
-
             }
 
             return res;
