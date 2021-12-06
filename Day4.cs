@@ -62,7 +62,7 @@ namespace Advent2021
             for (int i = 5; i < numbers.Count(); i++) //start at number 5, no winner before then
             {
                 List<Guid> matches = new List<Guid>();
-                RenderGrids(numbers.GetRange(0, i), bingoCards, i);
+                RenderGrids(numbers.GetRange(0, i), bingoCards);
 
                 for (int j = 0; j < bingoCards.Count; j++)
                 {

@@ -50,6 +50,21 @@ namespace Advent2021
                 List<Vector2> path = getPath2(startVec, endVec);
                 return new VentLine() { start = startVec, end = endVec, path = path };
             }).ToList();
+
+            //var diagonal = 0;
+            //var cardinal = 0;
+            //for (int i = 0; i < ventLines.Count(); i++)
+            //{
+            //    if (isCardinal(ventLines[i].start,ventLines[i].end))
+            //    {
+            //        cardinal++;
+            //    }
+            //    else
+            //    {
+            //        diagonal++;
+            //    }
+            //}
+
             var a = ventLines[1];
 
             var pathpoints = ventLines.SelectMany(x => x.path).ToList();

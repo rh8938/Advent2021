@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -8,7 +9,17 @@ namespace Advent2021
     {
         static void Main(string[] args)
         {
-            Day4.Part2();
+            var sw = new Stopwatch();
+            sw.Start();
+
+            Day6.Part2();
+
+            sw.Stop();
+
+
+            Console.WriteLine();
+            Console.WriteLine("Execution Time:");
+            Console.WriteLine(sw.ElapsedMilliseconds);
             Console.ReadLine();
         }
     }

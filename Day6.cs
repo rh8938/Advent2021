@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,9 +17,9 @@ namespace Advent2021
             var fishVals = input[0].Split(',').Select(x => int.Parse(x)).ToList();
             for (int i = 0; i < 80; i++)
             {
-                Console.WriteLine($"Day {i}");
-                Console.WriteLine($"FishVals Count {fishVals.Count()}");
-                Console.WriteLine(String.Join(',', fishVals));
+                Debug.WriteLine($"Day {i}");
+                Debug.WriteLine($"FishVals Count {fishVals.Count()}");
+                Debug.WriteLine(String.Join(',', fishVals));
                 for (int f = 0; f < fishVals.Count; f++)
                 {
                     fishVals[f] -= 1;
@@ -29,7 +30,7 @@ namespace Advent2021
                     }
                 }
             }
-            Console.Write(fishVals.Count());
+            Debug.Write(fishVals.Count());
         }
 
         public static void Part2()
@@ -60,8 +61,8 @@ namespace Advent2021
 
             for (int i = 0; i < 256; i++)
             {
-                Console.WriteLine("----------------");
-                Console.WriteLine($"Day {i}");
+                Debug.WriteLine("----------------");
+                Debug.WriteLine($"Day {i}");
 
                 decayed8 = fish8;
                 decayed7 = fish7;
@@ -83,15 +84,15 @@ namespace Advent2021
                 fish1 = decayed2;
                 fish0 = decayed1;
 
-                Console.WriteLine(fish8);
-                Console.WriteLine(fish7);
-                Console.WriteLine(fish6);
-                Console.WriteLine(fish5);
-                Console.WriteLine(fish4);
-                Console.WriteLine(fish3);
-                Console.WriteLine(fish2);
-                Console.WriteLine(fish1);
-                Console.WriteLine(fish0);
+                Debug.WriteLine(fish8);
+                Debug.WriteLine(fish7);
+                Debug.WriteLine(fish6);
+                Debug.WriteLine(fish5);
+                Debug.WriteLine(fish4);
+                Debug.WriteLine(fish3);
+                Debug.WriteLine(fish2);
+                Debug.WriteLine(fish1);
+                Debug.WriteLine(fish0);
             }
             Console.Write(fish0 + fish8 + fish7 + fish6 + fish5 + fish4 + fish3 + fish2 + fish1);
         }
