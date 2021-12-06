@@ -59,9 +59,36 @@ namespace Advent2021
                 grid.id = Guid.NewGuid();
                 bingoCards.Add(grid);
             }
-            for (int i = 4; i < numbers.Count(); i++) //start at number 5, no winner before then
+            for (int i = 5; i < numbers.Count(); i++) //start at number 5, no winner before then
             {
-                List<Guid> matches = new List<Guid>(); 
+                List<Guid> matches = new List<Guid>();
+
+
+                for (int bc = 0; bc < bingoCards.Count; bc++)
+                {
+                    BingoGrid item = bingoCards[bc];
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine($"-------");
+                    Console.WriteLine($"Grid {bc}");
+                    Console.WriteLine();
+                    for (int k = 0; k < item.grid.Count(); k++)
+                    {
+                        for (int j = 0; j < item.grid[k].Length; j++)
+                        {
+                            Console.ForegroundColor = ConsoleColor.White;
+
+                            if (numbers.GetRange(0, i).Contains(item.grid[k][j]))
+                            {
+                                Console.ForegroundColor = ConsoleColor.Green;
+                            }
+                            Console.Write(item.grid[k][j].ToString().PadLeft(2));
+                            Console.Write(",");
+                        }
+                        Console.WriteLine();
+                    }
+                }
+
                 for (int j = 0; j < bingoCards.Count; j++)
                 {
                     BingoGrid bingoCard = bingoCards[j];
@@ -79,6 +106,11 @@ namespace Advent2021
                         }
                     }
                 }
+                Console.ForegroundColor = ConsoleColor.Red;
+
+
+                Console.WriteLine();
+                Console.WriteLine();
                 Console.WriteLine("number " + numbers[i]);
                 Console.WriteLine("elims " + matches.Count);
                 foreach (Guid guid in matches)
@@ -86,13 +118,16 @@ namespace Advent2021
                     bingoCards.RemoveAll(x => matches.Contains(x.id));
                 }
                 Console.WriteLine($"Remaining: {bingoCards.Count}");
+
+
+                Console.ForegroundColor = ConsoleColor.White;
             }
             Console.Read();
         }
 
         public static Result CheckWinner(List<int[]> candidate, List<int> sequence)
         {
-            for (int i = 0; i < candidate.Count(); i++)
+            for (int i = 0; i < 5; i++) //Was trying to do things that wasn't needed
             {
                 if (sequence.Contains(candidate[i][0])
                     && sequence.Contains(candidate[i][1])
@@ -111,7 +146,7 @@ namespace Advent2021
                     return new Result() { winner = true, score = resultArray.Sum() * sequence.Last() };
                 }
             }
-            for (int i = 0; i < candidate[i].Length - 1; i++)
+            for (int i = 0; i < 5; i++) //Was trying to do things that wasn't needed
             {
                 if (sequence.Contains(candidate[0][i])
                    && sequence.Contains(candidate[1][i])
