@@ -62,32 +62,7 @@ namespace Advent2021
             for (int i = 5; i < numbers.Count(); i++) //start at number 5, no winner before then
             {
                 List<Guid> matches = new List<Guid>();
-
-
-                for (int bc = 0; bc < bingoCards.Count; bc++)
-                {
-                    BingoGrid item = bingoCards[bc];
-                    Console.WriteLine();
-                    Console.WriteLine();
-                    Console.WriteLine($"-------");
-                    Console.WriteLine($"Grid {bc}");
-                    Console.WriteLine();
-                    for (int k = 0; k < item.grid.Count(); k++)
-                    {
-                        for (int j = 0; j < item.grid[k].Length; j++)
-                        {
-                            Console.ForegroundColor = ConsoleColor.White;
-
-                            if (numbers.GetRange(0, i).Contains(item.grid[k][j]))
-                            {
-                                Console.ForegroundColor = ConsoleColor.Green;
-                            }
-                            Console.Write(item.grid[k][j].ToString().PadLeft(2));
-                            Console.Write(",");
-                        }
-                        Console.WriteLine();
-                    }
-                }
+                RenderGrids(numbers.GetRange(0, i), bingoCards, i);
 
                 for (int j = 0; j < bingoCards.Count; j++)
                 {
@@ -123,6 +98,34 @@ namespace Advent2021
                 Console.ForegroundColor = ConsoleColor.White;
             }
             Console.Read();
+        }
+
+        private static void RenderGrids(List<int> numbersToDate, List<BingoGrid> bingoCards)
+        {
+            for (int bc = 0; bc < bingoCards.Count; bc++)
+            {
+                BingoGrid item = bingoCards[bc];
+                Console.WriteLine();
+                Console.WriteLine();
+                Console.WriteLine($"-------");
+                Console.WriteLine($"Grid {bc}");
+                Console.WriteLine();
+                for (int k = 0; k < item.grid.Count(); k++)
+                {
+                    for (int j = 0; j < item.grid[k].Length; j++)
+                    {
+                        Console.ForegroundColor = ConsoleColor.White;
+
+                        if (numbersToDate.Contains(item.grid[k][j]))
+                        {
+                            Console.ForegroundColor = ConsoleColor.Green;
+                        }
+                        Console.Write(item.grid[k][j].ToString().PadLeft(2));
+                        Console.Write(",");
+                    }
+                    Console.WriteLine();
+                }
+            }
         }
 
         public static Result CheckWinner(List<int[]> candidate, List<int> sequence)
