@@ -8,7 +8,7 @@ namespace Advent2021
     {
         static void Main(string[] args)
         {
-            Day5.Part2();
+            Day6.Part2();
             Console.ReadLine();
         }
     }
