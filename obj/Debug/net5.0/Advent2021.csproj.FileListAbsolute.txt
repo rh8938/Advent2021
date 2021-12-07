@@ -40,3 +40,4 @@ C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\input05.txt
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\input05 - Copy.txt
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\obj\Debug\net5.0\Advent2021.csproj.AssemblyReference.cache
 C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\input06.txt
+C:\Users\ryanh\Documents\code\advent2021\Advent2021\bin\Debug\net5.0\input07.txt
