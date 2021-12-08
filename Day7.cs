@@ -40,7 +40,7 @@ namespace Advent2021
 
         public static void Part2()
         {
-            Console.WriteLine("Day7P1");
+            Console.WriteLine("Day7P2");
             var input = File.ReadAllLines("input07.txt").ToList();
             var crabSubs = input[0].Split(',').Select(x => int.Parse(x)).ToList();
             var maxCrab = crabSubs.Max();
