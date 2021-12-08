@@ -12,7 +12,7 @@ namespace Advent2021
             var sw = new Stopwatch();
             sw.Start();
 
-            Day8.Part1();
+            Day8.Part2();
 
             sw.Stop();
 
