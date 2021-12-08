@@ -69,8 +69,8 @@ namespace Advent2021
                 cipher[6] = display.input.Find(x => x.Length == 6 && !(cipher[1].ToCharArray()).All(y => x.Contains(y))); //6
                 cipher[9] = display.input.Find(x => x.Length == 6 && (cipher[4].ToCharArray()).All(y => x.Contains(y))); //9
                 cipher[0] = display.input.Find(x => x.Length == 6 && x != cipher[6] && x != cipher[9]); //0
-                cipher[5] = display.input.Find(x => x.Length == 5 && x != cipher[3] && cipher[9].ToCharArray().Except(x.ToCharArray()).Count() == 1); //2
-                cipher[2] = display.input.Find(x => x.Length == 5 && x != cipher[5] && x != cipher[3]); //5
+                cipher[5] = display.input.Find(x => x.Length == 5 && x != cipher[3] && cipher[9].ToCharArray().Except(x.ToCharArray()).Count() == 1); //5
+                cipher[2] = display.input.Find(x => x.Length == 5 && x != cipher[5] && x != cipher[3]); //2
 
                 string decoded = "";
                 foreach (var item in display.outputs)
