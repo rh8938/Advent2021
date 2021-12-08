@@ -58,19 +58,18 @@ namespace Advent2021
                 {
                     display.input[j] = String.Concat(display.input[j].OrderBy(c => c));
                 }
-                
 
                 string[] cipher = new string[10];
-                cipher[1] = display.input.Find(x => x.Length == 2); //1
-                cipher[4] = display.input.Find(x => x.Length == 4); //4
-                cipher[7] = display.input.Find(x => x.Length == 3); //7
-                cipher[8] = display.input.Find(x => x.Length == 7); //8
-                cipher[3] = display.input.Find(x => x.Length == 5 && (cipher[1].ToCharArray()).All(y => x.Contains(y))); //3
-                cipher[6] = display.input.Find(x => x.Length == 6 && !(cipher[1].ToCharArray()).All(y => x.Contains(y))); //6
-                cipher[9] = display.input.Find(x => x.Length == 6 && (cipher[4].ToCharArray()).All(y => x.Contains(y))); //9
-                cipher[0] = display.input.Find(x => x.Length == 6 && x != cipher[6] && x != cipher[9]); //0
-                cipher[5] = display.input.Find(x => x.Length == 5 && x != cipher[3] && cipher[9].ToCharArray().Except(x.ToCharArray()).Count() == 1); //5
-                cipher[2] = display.input.Find(x => x.Length == 5 && x != cipher[5] && x != cipher[3]); //2
+                cipher[1] = display.input.Find(x => x.Length == 2); //c1
+                cipher[4] = display.input.Find(x => x.Length == 4); //c4
+                cipher[7] = display.input.Find(x => x.Length == 3); //c7
+                cipher[8] = display.input.Find(x => x.Length == 7); //c8
+                cipher[3] = display.input.Find(x => x.Length == 5 && (cipher[1].ToCharArray()).All(y => x.Contains(y))); //c3 Length of 5 and contains all of c1
+                cipher[6] = display.input.Find(x => x.Length == 6 && !(cipher[1].ToCharArray()).All(y => x.Contains(y))); //c6 Length of 6 and doesnt contain all of c1
+                cipher[9] = display.input.Find(x => x.Length == 6 && (cipher[4].ToCharArray()).All(y => x.Contains(y))); //c9 Length of 6 and contains all of c4
+                cipher[0] = display.input.Find(x => x.Length == 6 && x != cipher[6] && x != cipher[9]); //c0 Last one of Length 6
+                cipher[5] = display.input.Find(x => x.Length == 5 && x != cipher[3] && cipher[9].ToCharArray().Except(x.ToCharArray()).Count() == 1); //c5 Length 5, one different value than c9
+                cipher[2] = display.input.Find(x => x.Length == 5 && x != cipher[5] && x != cipher[3]); //c2 Length 5, not c5 or c3
 
                 string decoded = "";
                 foreach (var item in display.outputs)
